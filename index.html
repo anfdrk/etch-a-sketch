@@ -11,7 +11,9 @@
   <div class="header">
     <h1>Etch-A-Sketch</h1>
   </div>
-  <div class="grid"></div>
+  <div class="grid-wrapper">
+    <div class="grid-container"></div>
+  </div>
   <div class="controls">
     <div class="contols-top">
       <p>Mode:</p>
@@ -19,14 +21,15 @@
         <div class="pick"></div>
       </button>
       <button>Rainbow</button>
-      <button class="active">Grey scale</button>
+      <button>Grey scale</button>
       <button>Eraser</button>
     </div>
     <div class="contols-bottom">
       <p>Grid size:</p>
-      <input type="range">
+      <input type="range" id="slider" value="24" min="8" max="64">
       <button>Clear</button>
     </div>
   </div>
 </body>
+<script src="script.js"></script>
 </html>

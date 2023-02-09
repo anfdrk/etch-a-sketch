@@ -22,7 +22,7 @@ h1 {
   font-family: 'Gorditas', sans-serif;
   margin: 20px 0 20px;
 }
-.grid {
+.grid-wrapper {
   width: 600px;
   height: 600px;
   background: #494B55;
@@ -30,6 +30,17 @@ h1 {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 30px;
   margin-bottom: 20px;
+}
+.grid-container {
+  border: 2px solid gray;
+  width: 540px;
+  height: 540px;
+  background-color: #CFD6D0;
+  display: grid;
+}
+.grid-cell {
+  border-top: 1px solid #bbbbbc;
+  border-left: 1px solid #bbbbbc;
 }
 .controls {
   background: #202938;
