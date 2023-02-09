@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Gorditas&family=Inter:wght@400;600;700&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+body {
+  background: #111828;
+  color: #CFD6D0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  color: #E2B260;
+  font-size: 54px;
+  font-family: 'Gorditas', sans-serif;
+  margin: 20px 0 20px;
+}
+.grid {
+  width: 600px;
+  height: 600px;
+  background: #494B55;
+  border-radius: 5px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 30px;
+  margin-bottom: 20px;
+}
+.controls {
+  background: #202938;
+  border: 1px solid #494B55;
+  border-radius: 10px;
+  min-width: 600px;
+  padding: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contols-top {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.contols-bottom {
+  display: flex;
+  justify-content: center;
+}
+button {
+  width: 100px;
+  height: 36px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  background: #202938;
+  color: #CFD6D0;
+  border: 2px solid #494B55;
+  border-radius: 5px;
+}
+button:hover {
+  background: #363E4B;
+}
+p {
+  margin: auto 0;
+}
+.color {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px 0 10px;
+}
+.pick {
+  background: #E2B260;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+.pick:hover {
+  transform: scale(1.3);
+}
+.active {
+  background: #0E766D;
+  border: 0px;
+}
+.active:hover {
+  background: #09524C;
+}
