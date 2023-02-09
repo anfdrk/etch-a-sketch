@@ -1,21 +1,23 @@
 const gridContainer = document.querySelector('.grid-container')
 const slider = document.getElementById('slider')
 
+makeGrid(slider.value)
 
-makeGrid()
+slider.addEventListener("input", () => {
+  gridContainer.innerHTML = ''
+  makeGrid(slider.value)
+})
 
-
-
-function makeGrid() {
-  for (let i = 0; i < slider.value; i++) {
-    for (let j = 0; j < slider.value; j++) {
-      const cell = document.createElement("div");
-      cell.classList.add("grid-cell");
-      gridContainer.appendChild(cell);
+function makeGrid(size) {
+  for (let i = 0; i < size; i++) {
+    for (let j = 0; j < size; j++) {
+      const cell = document.createElement("div")
+      cell.classList.add("grid-cell")
+      gridContainer.appendChild(cell)
     }
     gridContainer.style.cssText = `
-    grid-template-columns: repeat(${slider.value}, 1fr); 
-    grid-template-rows: repeat(${slider.value}, 1fr);`
+    grid-template-columns: repeat(${size}, 1fr); 
+    grid-template-rows: repeat(${size}, 1fr);`
   }
 }
 
