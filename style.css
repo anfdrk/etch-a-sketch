@@ -41,6 +41,7 @@ h1 {
 .grid-cell {
   border-top: 1px solid #bbbbbc;
   border-left: 1px solid #bbbbbc;
+  user-select: none;
 }
 .controls {
   background: #202938;
@@ -104,7 +105,7 @@ p {
   border: 0px;
 }
 .active:hover {
-  background: #09524C;
+  background: #0E766D;
 }
 input[type="range"] {
   -webkit-appearance: none;
