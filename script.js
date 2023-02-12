@@ -5,35 +5,45 @@ const rainbowBtn = document.getElementById('rainbow')
 const greyScaleBtn = document.getElementById('grey-scale')
 const eraserBtn = document.getElementById('eraser')
 const clearBtn = document.getElementById('clear')
-const colorPicker = document.querySelector('.pick')
+const colorInput = document.getElementById("color-input");
 
+let currentColor = colorInput.value
+let currentMode = 'color'
+colorBtn.classList.add('active')
 createGrid(slider.value)
 
-const colors = ["black", "red", "blue", "green", "yellow"];
+colorBtn.onclick = () => setCurrentMode('color')
+rainbowBtn.onclick = () => setCurrentMode('rainbow')
+greyScaleBtn.onclick = () => setCurrentMode('grey scale')
+eraserBtn.onclick = () => setCurrentMode('eraser')
+clearBtn.onclick = () => clearGrid()
 
-let currentColor = 'black'
-let currentMode = 'color'
-// currentMode.classList.add('active')
+function setCurrentMode(newMode) {
+  activateButton(newMode)
+  currentMode = newMode
+}
 
-function chooseColor() {
+function activateButton(newMode) {
   if (currentMode === 'rainbow') {
-    currentColor = getRandomColor()
+    rainbowBtn.classList.remove('active')
+  } else if (currentMode === 'color') {
+    colorBtn.classList.remove('active')
+  } else if (currentMode === 'eraser') {
+    eraserBtn.classList.remove('active')
+  } else if (currentMode === 'grey scale') {
+    greyScaleBtn.classList.remove('active')
   }
-  if (currentMode === 'grey scale'){
-    currentColor = get
+
+  if (newMode === 'rainbow') {
+    rainbowBtn.classList.add('active')
+  } else if (newMode === 'color') {
+    colorBtn.classList.add('active')
+  } else if (newMode === 'eraser') {
+    eraserBtn.classList.add('active')
+  } else if (newMode === 'grey scale') {
+    greyScaleBtn.classList.add('active')
   }
 }
-print(chooseColor())
-
-eraserBtn.onclick = e => updateMode(e.target);
-
-
-// function updateMode(mode) {
-//   currentMode.classList.toggle('active')
-//   currentMode = mode
-//   currentMode.classList.toggle('active')
-// }
-
 
 slider.onchange = (e) => {
   gridContainer.innerHTML = ''
@@ -63,11 +73,30 @@ function createGrid(size) {
   }
 }
 
-const getNextColor = (currentColor) => {
-  const currentIndex = colors.indexOf(currentColor);
-  return colors[(currentIndex + 1) % colors.length];
-};
+function chooseColor(info) {
+  print(info)
+  if (currentMode === 'rainbow') {
+    currentColor = getRandomColor()
+  } else if (currentMode === 'grey scale'){
+    currentColor = getShade()
+  } else if (currentMode === 'eraser') {
+    currentColor = '#CFD6D0'
+  } else if (currentMode === 'color') {
+    currentColor = colorInput.value
+  }
 
+}
+
+function clearGrid() {
+  gridContainer.innerHTML = ''
+  createGrid(slider.value)
+}
+
+function getRandomColor() {
+  return `hsl(${Math.random() * 360}, 100%, 70%)`;
+}
+
+// --------------------------------------------------------------
 
 function print(x){
   console.log(x)
